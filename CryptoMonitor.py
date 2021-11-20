@@ -44,9 +44,10 @@ def screen(dict_prices):
 if __name__ == "__main__":
     print("CryptoMonitor")
     symList = ['BTC', 'ETH', 'ADA', 'DOGE', 'SHIB']
+    
     prices = getPrice(symList)
 
-    for key, value in prices.items():
-        print(key.capitalize(), " : ", value)
+    #for key, value in prices.items():
+    #    print(key.capitalize(), " : ", value)
 
     screen(prices)
