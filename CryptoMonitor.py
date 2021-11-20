@@ -22,17 +22,18 @@ def getPrice(symbols):
 
 def screen(dict_prices):
     canvas = tk.Tk()
+    canvas.config(background='gray')
     #canvas.geometry("400x500")
     canvas.title("Crypto Monitor")
 
     f1 = ("poppins", 24, "bold")
     f2 = ("poppins", 18, "normal")
 
-    label = tk.Label(canvas, text="Crypto Currencies prices", font = f2)
+    label = tk.Label(canvas, text="Crypto Currencies prices", font = f2, foreground = 'lightgreen', background='gray')
     label.pack(pady = 20)
 
     for key, value in dict_prices.items():
-        label_aux = tk.Label(canvas, font=f2, borderwidth=5)
+        label_aux = tk.Label(canvas, font=f2, borderwidth=5, foreground='white', background="gray")
         label_aux.config(text='%s : %f €'%(key.capitalize(),float(value)))
         label_aux.pack(pady = 10)
 
@@ -42,7 +43,7 @@ def screen(dict_prices):
 
 if __name__ == "__main__":
     print("CryptoMonitor")
-    symList = ['BTC', 'ETH', 'ADA', 'DOGE', 'SOL']
+    symList = ['BTC', 'ETH', 'ADA', 'DOGE', 'SHIB']
     prices = getPrice(symList)
 
     for key, value in prices.items():
